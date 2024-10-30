@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Card</title>
+    <link rel="stylesheet" href="{% static 'css/media.css' %}" >
+</head>
+<body>
+
+    <div class="customer-card">
+        {% for i in data %}
+        {% if i.image %}
+        <img src="{{i.image.url}}" alt="Customer Image" class="customer-image">
+        {% else %}
+        <img src="">
+        {% endif %}
+        <!-- Customer details -->
+        <div class="customer-details">
+            <h2>{{i.id}}</h2>
+            <p><strong>name:</strong>{{i.name}}</p>
+            <p><strong>place:</strong>:</strong>{{i.place}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
+

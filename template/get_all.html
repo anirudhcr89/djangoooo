@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>date</th>
+            <th>age</th>
+            <th>action</th>
+            <th>upadte</th>
+        </tr>
+        {% for x in data1 %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.username}}</td>
+            <td>{{x.user_date}}</td>
+            <td>{{x.user_age}}</td>
+            <td><a href="delete/{{x.id}}">delete</a></td>
+            <td><a href="update/{{x.id}}">update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+   <a href="{% url 'add' %}">add</a>
+</body>
+</html>
